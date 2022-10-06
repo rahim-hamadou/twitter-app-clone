@@ -1,0 +1,18 @@
+.pageTweet {
+    display: flex;
+    align-items: center;
+}
+
+.returnHome {
+    display: flex;
+    flex-direction: column;
+}
+
+.home {
+    display: flex;
+
+}
+
+.trends{
+    display: flex;
+}

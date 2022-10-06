@@ -5,6 +5,8 @@
   align-items: center;
   min-height: 100vh;
   padding: 4rem 0;
+  background-color: black;
+  color: white;
 }
 
 .title {
@@ -19,4 +21,76 @@
 
 .title a:hover, .title a:focus, .title a:active {
   text-decoration: underline;
+}
+
+
+
+
+
+
+.tweet {
+  display: flex;
+}
+
+
+.homeLeft {
+  height: 90%;
+  width: 50%;
+}
+
+.titleUp {
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+}
+
+.connect {
+  display: flex;
+}
+
+.popoverSignUp{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #0070f3;
+  color: white;
+  border: 1px solid;
+  border-radius: 4px;
+  transition-duration: 0.5s;
+  cursor: pointer;  
+}
+
+.popoverSignUp:hover {
+	background-color: white;
+	color: #006de1ee;
+	border: none;
+}
+
+.popoverSignIn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 80px;
+  background-color: black;
+  color: #004aa1;
+  border: 1px white solid;
+  border-radius: 4px;
+  transition-duration: 0.5s;
+  cursor: pointer;  
+}
+
+.popoverSignIn:hover {
+  background-color: #4c4c4d;
+	color: #0070f3;
+	border: none;
+}
+
+.registerSelection {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  color: white;
 }
