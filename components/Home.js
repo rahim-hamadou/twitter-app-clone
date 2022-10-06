@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css';
 //login et logout venant de component/user
 import { login, logout } from '../reducers/user';
 //import pour le popover et bouton
-
+import { Popover } from 'antd';
 //Modal pour le popover de signin et signup
 //import { Modal } from 'antd';
 
@@ -12,13 +12,14 @@ import { useEffect, useState } from "react";
 function Home() {
 
   //les etats pour signup et signin
+  const [signUpFirstname, setSignUpFirstname] = useState('');
   const [signUpUsername, setSignUpUsername] = useState('');
   const [signUpPassword, setSignUpPassword] = useState('');
   const [signInUsername, setSignInUsername] = useState('');
   const [signInPassword, setSignInPassword] = useState('');
 
   //l'état pour Modal (affichage ou pas)
-  const [isModalVisible, setIsModalVisible] = useState(false);
+  //const [isModalVisible, setIsModalVisible] = useState(false);
 
   
   const handleRegister = () => {
