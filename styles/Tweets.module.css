@@ -1,19 +1,85 @@
+/* Global */
+
+/* .pageEntiere {
+	width: 100vw;
+} */
+
 .pageTweet {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+	display: flex;
+	background-color: #151f2b;
+	height: 100vh;
+	width: 100vw;
 }
 
-.returnHome {
-    display: flex;
-    flex-direction: column;
+/* userSection */
+
+.sectionUser {
+	/* background-color: Red !important; */
+	border: 1px solid #59687b !important;
+	height: 100vh;
+	width: 70vw;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
-.home {
-    display: flex;
-
+.logo img {
+	width: 50px;
+	margin: 20px 50px;
 }
 
-.trends{
-    display: flex;
+.userInfo {
+	width: 100%;
+	margin: 0;
+}
+.userCadre {
+	border: 2px solid #59687b;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	align-items: center;
+	width: 100%;
+	margin: 0;
+}
+
+.userCadre svg {
+	width: 100px;
+}
+#userLogo {
+	font-size: 50px;
+}
+
+.btnLogout button {
+	margin: 30px;
+	width: 100px;
+	padding: 10px;
+	background-color: transparent;
+	color: #fff;
+	border: 1px solid #59687b;
+	border-radius: 30px;
+}
+
+/* sectionCenter */
+
+.sectionCenter {
+	/* background-color: blue !important; */
+	border: 1px solid #59687b !important;
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+}
+/* sectionTrends */
+.sectionTrends {
+	color: white;
+	/* background-color: green !important; */
+	border: 1px solid #59687b !important;
+	height: 100vh;
+	width: 70vw;
+	display: flex;
+	flex-direction: column;
+}
+
+.headerTrends h2 {
+	margin: 30px 30px 0;
 }

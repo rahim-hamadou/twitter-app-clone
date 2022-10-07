@@ -2,7 +2,8 @@ import styles from "../styles/Home.module.css";
 //login et logout venant de component/user
 import { login, logout } from "../reducers/user";
 //import pour le popover et bouton
-import { Popover, Button } from "antd";
+import { Modal, Button, DatePicker } from "antd";
+import "antd/dist/antd.css";
 //Modal pour le popover de signin et signup
 //import { Modal } from 'antd';
 
@@ -105,27 +106,35 @@ function Home() {
 		</div>
 	);
 
-	const popoverContentSignIn = (
-		<div className={styles.registerSection}>
-			<input
-				type="text"
-				placeholder="Username"
-				id="signInUsername"
-				onChange={(e) => setSignInUsername(e.target.value)}
-				value={signInUsername}
-			/>
-			<input
-				type="password"
-				placeholder="Password"
-				id="signInPassword"
-				onChange={(e) => setSignInPassword(e.target.value)}
-				value={signInPassword}
-			/>
-			<button id="connection" onClick={() => handleConnection()}>
-				Sign-in
-			</button>
-		</div>
-	);
+	// MODAL
+	const [isModalRegister, setIsModalRegister] = useState(false);
+	const [isModalLogin, setIsModalLogin] = useState(false);
+
+	const showModalRegister = () => {
+		setIsModalRegister(true);
+	};
+	const showModalLogin = () => {
+		setIsModalLogin(true);
+	};
+
+	const handleOkRegister = () => {
+		setIsModalRegister(false);
+		console.log("valided");
+	};
+	const handleOkLogin = () => {
+		setIsModalLogin(false);
+		console.log("valided");
+	};
+
+	const handleCancelRegister = () => {
+		setIsModalRegister(false);
+		console.log("cancelled");
+	};
+	const handleCancelLogin = () => {
+		setIsModalLogin(false);
+		console.log("cancelled");
+	};
+	// MODAL
 
 	return (
 		<div className={styles.tweet}>
@@ -139,24 +148,43 @@ function Home() {
 					<h1 className={styles.title}>See what's happening</h1>
 					<h2 className={styles.joinMe}>Join Hackatweet today.</h2>
 				</div>
-				<div className={styles.connect}>
-					<Popover
-						title="Sign up"
-						content={popoverContentSignUp}
-						className={styles.popoverSignUp}
-						trigger="click"
-					>
-						<button id="SignUp">Sign up</button>
-					</Popover>
-					<p>Already have an account?</p>
-					<Popover
-						title="Sign In"
-						content={popoverContentSignIn}
-						className={styles.popoverSignIn}
-						trigger="click"
-					>
-						<Button id="SignIn">Sign In</Button>
-					</Popover>
+
+				<div className="userConnect">
+					<div className={styles.connect}>
+						{/* modal  register*/}
+						<Button type="primary" onClick={showModalRegister}>
+							SignUp
+						</Button>
+						<Modal
+							title="Basic Modal"
+							open={isModalRegister}
+							onOk={handleOkRegister}
+							onCancel={handleCancelRegister}
+						>
+							<input type="text" name="name" id="" placeholder="name" />
+							<input type="text" name="username" id="" placeholder="username" />
+							<input type="text" name="password" id="" placeholder="password" />
+						</Modal>
+						{/* modal */}
+					</div>
+					<p>You already have account?</p>
+					<div>
+						{/* modal  login*/}
+
+						<Button type="primary" onClick={showModalLogin}>
+							SignIn
+						</Button>
+						<Modal
+							title="Basic Modal"
+							open={isModalLogin}
+							onOk={handleOkLogin}
+							onCancel={handleCancelLogin}
+						>
+							<input type="text" name="username" id="" placeholder="username" />
+							<input type="text" name="password" id="" placeholder="password" />
+						</Modal>
+						{/* modal */}
+					</div>
 				</div>
 			</main>
 		</div>
