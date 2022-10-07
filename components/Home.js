@@ -2,7 +2,7 @@ import styles from '../styles/Home.module.css';
 //login et logout venant de component/user
 import { login, logout } from '../reducers/user';
 //import pour le popover et bouton
-import { Popover } from 'antd';
+import { Popover,Button } from 'antd';
 //Modal pour le popover de signin et signup
 //import { Modal } from 'antd';
 
@@ -116,7 +116,7 @@ function Home() {
           </Popover>
           <p>Already have an account?</p>
           <Popover title="Sign In" content={popoverContentSignIn} className={styles.popoverSignIn} trigger="click">
-            <button id='SignIn'>Sign In</button>
+            <Button id='SignIn'>Sign In</Button>
           </Popover>
         </div>
       </main>
